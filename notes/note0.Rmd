@@ -1,10 +1,17 @@
 ---
-title: "Evaluation of Bayesian models: Bayes Factors, and out-of-sample generalization^[This note was written in RMarkdown and the source document is available at https://github.com/lawsofthought/bayes-model-evaluation and therein one can obtain all the R code to generate the simulations presented here.]"
+title: |
+  Evaluation of Bayesian models: Bayes Factors, and out-of-sample generalization^[This
+  note was written in RMarkdown and the source document is available at https://github.com/lawsofthought/bayes-model-evaluation
+  and therein one can obtain all the R code to generate the simulations presented
+  here.]
 author: "Mark Andrews"
 date: "June 2018"
-output: pdf_document
-header-includes:
-   - \input{include}
+output:
+  html_document:
+    keep_tex: true
+    df_print: paged
+header-includes: 
+  - \usepackage{centernot}
 ---
 
 ```{r setup, include=FALSE}
@@ -14,6 +21,12 @@ library(magrittr)
 library(pander)
 set.seed(10101)
 ```
+
+\newcommand{\data}{\mathcal{D}}
+\newcommand{\realspace}[1]{\mathbb{R}^{#1}}
+\newcommand{\Prob}[1]{\mathrm{P}(#1)}
+\newcommand{\given}{\vert}
+\usepackage{centernot}
 
 In a typical data analysis problem, we have observed data, e.g. $\data = x_1, x_2 \ldots x_i \ldots x_n$, which we assume is generated from a true data generating process $f_{\textrm{True}}$. For example, in the case of independent observations, we would have $x_i \sim f_{\textrm{True}}(x_i)$ for all $i \in 1\ldots n$, with $f_{\textrm{True}}(x_i)$ being the probability density function[^density_function_footnote] for the random variable $x_i$. In general, we do not know and can not know what $f_{\textrm{True}}$ is.
 
@@ -78,7 +91,7 @@ $$
 $$
 and 
 $$
-\Prob{\data\given M_0} > \Prob{\data\given M_1} \centernot\Longleftrightarrow \Prob{\data^\prime\given \data, M_0} > \Prob{\data^\prime\given \data, M_1}.
+\Prob{\data\given M_0} > \Prob{\data\given M_1} \not\Rightarrow \Prob{\data^\prime\given \data, M_0} > \Prob{\data^\prime\given \data, M_1}.
 $$
 
 [^ppf_footnote]: Here, we use the acronym $\mathrm{PPF}$ for *posterior predictive factor*, although this term is not, to our knowledge, widely (or ever) used.
