@@ -1,5 +1,5 @@
 ---
-title: "Evaluation of Bayesian models: Bayes Factors, and out-of-sample generalization^[This note was written in RMarkdown and the source document is available at https://www.somewhere.com and therein one can obtain all the R code to generate the simulations presented here.]"
+title: "Evaluation of Bayesian models: Bayes Factors, and out-of-sample generalization^[This note was written in RMarkdown and the source document is available at https://github.com/lawsofthought/bayes-model-evaluation and therein one can obtain all the R code to generate the simulations presented here.]"
 author: "Mark Andrews"
 date: "June 2018"
 output: pdf_document
